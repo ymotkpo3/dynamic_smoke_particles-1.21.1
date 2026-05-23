@@ -3,6 +3,15 @@ plugins {
 	id "com.modrinth.minotaur" version "2.+"
 }
 
+repositories {
+	maven {
+		name = "Terraformers"
+		url = "https://maven.terraformersmc.com/"
+	}
+	maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+}
+
 version = project.mod_version
 group = project.maven_group
 
@@ -19,6 +28,10 @@ dependencies {
 	
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
+	implementation("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 }
 
 processResources {

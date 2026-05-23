@@ -15,6 +15,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
+import niwer.dynamic_smoke_particles.Engine;
 
 @Mixin(CampfireSmokeParticle.class)
 public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle {
@@ -31,6 +32,8 @@ public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle {
 
 	@Inject(at = @At("HEAD"), method = "tick", cancellable = true)
 	private void onTick(CallbackInfo info) {
+		if(!Engine.config().isEnabled()) return; // If the mod is disabled, skip the custom tick logic and use the original behavior
+
 		info.cancel();
 		this.stoppedByCollision = false;
 

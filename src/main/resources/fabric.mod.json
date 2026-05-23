@@ -16,6 +16,9 @@
 		"main": [],
 		"client": [
 			"niwer.dynamic_smoke_particles.Engine"
+		],
+		"modmenu": [
+			"niwer.dynamic_smoke_particles.ModMenuCompat"
 		]
 	},
 	"mixins": [
