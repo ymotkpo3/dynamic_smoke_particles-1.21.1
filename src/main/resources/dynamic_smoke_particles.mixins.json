@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "niwer.dynasp.mixin",
+	"package": "niwer.dynamic_smoke_particles.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [],
 	"client": [

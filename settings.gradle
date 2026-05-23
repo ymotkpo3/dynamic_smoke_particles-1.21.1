@@ -8,6 +8,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-
-// Should match your modid
 rootProject.name = 'dynamic_smoke_particles'

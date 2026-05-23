@@ -1,4 +1,4 @@
-package niwer.dynasp.mixin;
+package niwer.dynamic_smoke_particles.mixin;
 
 import java.util.List;
 

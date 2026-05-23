@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "dynasp",
+	"id": "dynamic_smoke_particles",
 	"version": "${version}",
 	"name": "Dynamic Smoke Particles",
 	"description": "This is an example description! Tell everyone what your mod is about!",
@@ -16,11 +16,11 @@
 	"entrypoints": {
 		"main": [],
 		"client": [
-			"niwer.dynasp.Engine"
+			"niwer.dynamic_smoke_particles.Engine"
 		]
 	},
 	"mixins": [
-		"dynasp.mixins.json"
+		"dynamic_smoke_particles.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.19.2",

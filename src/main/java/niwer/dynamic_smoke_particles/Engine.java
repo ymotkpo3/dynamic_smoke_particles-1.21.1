@@ -1,4 +1,4 @@
-package niwer.dynasp;
+package niwer.dynamic_smoke_particles;
 
 import net.fabricmc.api.ClientModInitializer;
 
