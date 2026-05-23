@@ -43,9 +43,9 @@ java {
 
 modrinth {
     token = System.getenv("MODRINTH_TOKEN")
-    projectId = "niwer_engine"
+    projectId = "dynamic_smoke_particles"
     versionNumber = project.mod_version
-    versionType = "release" 
+    versionType = "release"
     uploadFile = jar
     gameVersions = [project.minecraft_version]
     loaders = ["fabric"]
