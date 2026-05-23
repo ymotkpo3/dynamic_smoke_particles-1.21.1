@@ -3,13 +3,12 @@
 	"id": "dynamic_smoke_particles",
 	"version": "${version}",
 	"name": "Dynamic Smoke Particles",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A simple Minecraft Fabric mod that makes smoke particles dynamic!",
 	"authors": [
 		"Niwer"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Niwer1525/dynamic_smoke_particles"
 	},
 	"icon": "icon.png",
 	"environment": "*",
