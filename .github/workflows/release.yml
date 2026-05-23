@@ -1,6 +1,9 @@
 name: Release and Publish
-on: [pull_request, push]
-
+on:
+  push:
+    tags:
+      - 'v*' # Triggers when receiving a tag push such v1.0.1
+      
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
