@@ -65,6 +65,7 @@ modrinth {
     dependencies {
         required.project "fabric-api"
 
-        optional.project "textweaks"
+        optional.project "modmenu"
+		optional.project "cloth-config"
     }
 }
