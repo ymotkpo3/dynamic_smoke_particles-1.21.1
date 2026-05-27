@@ -18,6 +18,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import niwer.dynamic_smoke_particles.Engine;
@@ -203,13 +204,20 @@ public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle {
 				CHECK_POS.set(SAMPLE_X, SAMPLE_Y, SAMPLE_Z);
 				
 				final var BLOCK_STATE = this.level.getBlockState(CHECK_POS);
-				if(BLOCK_STATE.getBlock() instanceof StairBlock) {
-					score += 2.0D; // Stairs are very good escape points, as they don't have a full collision box and can be easily escaped through
+				if(BLOCK_STATE.getBlock() instanceof TrapDoorBlock) {
+					boolean isOpen = BLOCK_STATE.getValue(TrapDoorBlock.OPEN);
+
+					score += isOpen ? 3.0D : 0.0D; // Open trapdoors are excellent escape points, as they don't have a collision box and can be easily escaped through, while closed trapdoors don't provide any escape benefit
 				} else if(BLOCK_STATE.getBlock() instanceof SlabBlock) {
-					score += 1.5D; // Slabs are good escape points, as they don't have a full collision box and can be easily escaped through
+					score += 2.5D; // Slabs are good escape points, as they don't have a full collision box and can be easily escaped through
+				} else if(BLOCK_STATE.getBlock() instanceof StairBlock) {
+					score += 2.0D; // Stairs are very good escape points, as they don't have a full collision box and can be easily escaped through
 				} else if (BLOCK_STATE.getCollisionShape(this.level, CHECK_POS).isEmpty()) {
 					score += vertical == 0 ? 1.5D : 1.0D;
-				} else {
+				} else if(!BLOCK_STATE.isCollisionShapeFullBlock(level, CHECK_POS)) {
+					score += vertical == 0 ? 1.0D : 0.5D; // Blocks with low collision boxes (like bottom slabs or carpet) are somewhat good escape points, as they can be escaped through with a bit of vertical movement
+				}
+				else {
 					score -= 3.0D;
 					return score;
 				}
