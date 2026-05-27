@@ -26,6 +26,12 @@ public class ClothConfigCompat {
                     .setSaveConsumer(config::setEnabled)
                     .build()
             );
+
+            GLOBAL.addEntry(
+                ENTRY_BUILDER.startEnumSelector(Component.literal("Performance Profile"), PerformanceProfile.class, config.performanceProfile())
+                    .setSaveConsumer(config::setPerformanceProfile)
+                    .build()
+            );
         }
 
         return BUILDER.build();

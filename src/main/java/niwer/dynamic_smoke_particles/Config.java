@@ -16,8 +16,13 @@ public class Config {
     private static File configFile;
 
     private boolean enabled = true;
+    private PerformanceProfile performanceProfile = PerformanceProfile.COMPLEX;
 
     private Config() {}
+
+    public PerformanceProfile performanceProfile() { return performanceProfile; }
+
+    public void setPerformanceProfile(PerformanceProfile performanceProfile) { this.performanceProfile = performanceProfile; }
 
     public boolean isEnabled() { return enabled; }
 
