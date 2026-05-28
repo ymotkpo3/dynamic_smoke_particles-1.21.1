@@ -18,7 +18,7 @@
 			"niwer.dynamic_smoke_particles.Engine"
 		],
 		"modmenu": [
-			"niwer.dynamic_smoke_particles.ModMenuCompat"
+			"niwer.dynamic_smoke_particles.compatibility.ModMenuCompat"
 		]
 	},
 	"mixins": [

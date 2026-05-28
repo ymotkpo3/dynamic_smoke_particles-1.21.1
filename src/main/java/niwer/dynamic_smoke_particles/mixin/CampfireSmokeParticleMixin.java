@@ -14,7 +14,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.phys.AABB;
 import niwer.dynamic_smoke_particles.CampfireSmokeParticleAccessor;
 import niwer.dynamic_smoke_particles.Engine;
-import niwer.dynamic_smoke_particles.ParticleUtils;
+import niwer.dynamic_smoke_particles.utils.ParticleUtils;
 
 @Mixin(CampfireSmokeParticle.class)
 public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle implements CampfireSmokeParticleAccessor {
@@ -49,7 +49,7 @@ public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle impl
 
 			final double previousY = this.y;
 			final double requestedYMotion = this.yd;
-			ParticleUtils.move(this, this.xd, this.yd, this.zd);
+			ParticleUtils.applyMovement(this, this.xd, this.yd, this.zd, true);
 
 			if (requestedYMotion != 0.0D && Math.abs(this.y - previousY) < EPS_MIN_MOVEMENT) {
 				switch (Engine.config().performanceProfile()) {

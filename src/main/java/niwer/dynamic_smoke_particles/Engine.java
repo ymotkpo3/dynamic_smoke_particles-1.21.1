@@ -5,6 +5,8 @@ import java.util.Arrays;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screens.Screen;
+import niwer.dynamic_smoke_particles.compatibility.ClothConfigCompat;
+import niwer.dynamic_smoke_particles.config.Config;
 
 public class Engine implements ClientModInitializer {
 	private static final String[] CLOTH_CONFIG_ID = new String[] { "cloth-config", "cloth_config", "cloth-config2" };
