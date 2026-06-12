@@ -1,72 +1,7 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version "${loom_version}"
-	id "com.modrinth.minotaur" version "2.+"
-}
-
-repositories {
-	maven {
-		name = "Terraformers"
-		url = "https://maven.terraformersmc.com/"
-	}
-	maven { url "https://maven.shedaniel.me/" }
-    maven { url "https://maven.terraformersmc.com/releases/" }
-}
-
-version = project.mod_version
-group = project.maven_group
-
-loom {
-	mods {
-		"dynamic_smoke_particles" {
-			sourceSet sourceSets.main
-		}
-	}
-}
-
-dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	
-	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	implementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
-	implementation("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
-        exclude(group: "net.fabricmc.fabric-api")
-    }
-}
-
-processResources {
-	def version = project.version
-	inputs.property "version", version
-
-	filesMatching("fabric.mod.json") {
-		expand "version": version
-	}
-}
-
-tasks.withType(JavaCompile).configureEach {
-	it.options.release = 25
-}
-
-java {
-	withSourcesJar()
-
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(25)
-	}
-}
-
-modrinth {
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = "dynamic_smoke_particles"
-    versionNumber = project.mod_version
-    versionType = "release"
-    uploadFile = jar
-    gameVersions = [project.minecraft_version]
-    loaders = ["fabric"]
-    dependencies {
-        required.project "fabric-api"
-
-        optional.project "modmenu"
-		optional.project "cloth-config"
-    }
+    // see https://fabricmc.net/develop/ for new versions
+    id 'net.fabricmc.fabric-loom' version '1.15.5' apply false
+    
+    // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
+    id 'net.neoforged.moddev' version '2.0.141' apply false
 }
