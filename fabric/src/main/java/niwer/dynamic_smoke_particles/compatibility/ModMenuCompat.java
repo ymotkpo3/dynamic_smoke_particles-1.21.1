@@ -3,7 +3,7 @@ package niwer.dynamic_smoke_particles.compatibility;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 
-import niwer.dynamic_smoke_particles.Engine;
+import niwer.dynamic_smoke_particles.FabricEngine;
 
 /**
  * Compatibility class for ModMenu.
@@ -17,6 +17,6 @@ public class ModMenuCompat implements ModMenuApi {
 
     @Override
 	public ConfigScreenFactory<?> getModConfigScreenFactory() {
-		return Engine::getConfigScreen;
+		return FabricEngine::getConfigScreen;
 	}
 }

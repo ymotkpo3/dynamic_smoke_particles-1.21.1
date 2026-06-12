@@ -1,4 +1,6 @@
-package com.example.examplemod.platform.services;
+package niwer.dynamic_smoke_particles.platform.services;
+
+import java.util.Arrays;
 
 public interface IPlatformHelper {
 
@@ -8,6 +10,16 @@ public interface IPlatformHelper {
      * @return The name of the current platform.
      */
     String getPlatformName();
+
+    /**
+	 * Checks if any of the given mods are loaded.
+	 * 
+	 * @param modId The mod ids to check for.
+	 * @return True if any of the mods are loaded, false otherwise.
+	 */
+	default boolean isModLoaded(String ...modId) {
+		return Arrays.stream(modId).anyMatch(this::isModLoaded);
+	}
 
     /**
      * Checks if a mod with the given id is loaded.
@@ -30,7 +42,6 @@ public interface IPlatformHelper {
      * @return The name of the environment type.
      */
     default String getEnvironmentName() {
-
         return isDevelopmentEnvironment() ? "development" : "production";
     }
 }

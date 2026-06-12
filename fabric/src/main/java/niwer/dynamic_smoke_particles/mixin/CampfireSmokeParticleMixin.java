@@ -13,7 +13,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.phys.AABB;
 import niwer.dynamic_smoke_particles.CampfireSmokeParticleAccessor;
-import niwer.dynamic_smoke_particles.Engine;
+import niwer.dynamic_smoke_particles.FabricEngine;
 import niwer.dynamic_smoke_particles.utils.ParticleUtils;
 
 @Mixin(CampfireSmokeParticle.class)
@@ -31,7 +31,7 @@ public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle impl
 
 	@Inject(at = @At("HEAD"), method = "tick", cancellable = true)
 	private void onTick(CallbackInfo info) {
-		if (!Engine.config().isEnabled()) return;
+		if (!FabricEngine.config().isEnabled()) return;
 
 		info.cancel();
 		this.stoppedByCollision = false;
@@ -52,7 +52,7 @@ public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle impl
 			ParticleUtils.applyMovement(this, this.xd, this.yd, this.zd, true);
 
 			if (requestedYMotion != 0.0D && Math.abs(this.y - previousY) < EPS_MIN_MOVEMENT) {
-				switch (Engine.config().performanceProfile()) {
+				switch (FabricEngine.config().performanceProfile()) {
 					case SIMPLE -> ParticleUtils.applySimpleVerticalStallResponse(this, RND_SOURCE);
 					case COMPLEX -> ParticleUtils.applyComplexVerticalStallResponse(this, RND_SOURCE);
 				}

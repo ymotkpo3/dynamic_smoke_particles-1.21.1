@@ -1,7 +1,7 @@
-package com.example.examplemod.platform;
+package niwer.dynamic_smoke_particles.platform;
 
-import com.example.examplemod.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
+import niwer.dynamic_smoke_particles.platform.services.IPlatformHelper;
 
 public class FabricPlatformHelper implements IPlatformHelper {
 
