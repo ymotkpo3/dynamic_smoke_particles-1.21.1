@@ -7,8 +7,6 @@ import niwer.dynamic_smoke_particles.compatibility.ClothConfigCompat;
 import niwer.dynamic_smoke_particles.platform.Services;
 
 public class FabricEngine extends Engine implements ClientModInitializer {
-	private static final String[] CLOTH_CONFIG_ID = new String[] { "cloth-config", "cloth_config", "cloth-config2" };
-
 	@Override
 	public void onInitializeClient() {
 		this.init(FabricLoader.getInstance().getConfigDir());
@@ -21,7 +19,7 @@ public class FabricEngine extends Engine implements ClientModInitializer {
 	 * @return The config screen or null if no compatible config mod is loaded.
 	 */
 	public static Screen getConfigScreen(Screen parent) {
-		if(Services.PLATFORM.isModLoaded(CLOTH_CONFIG_ID)) return ClothConfigCompat.getConfigScreen(parent, config());
+		if(Services.PLATFORM.isModLoaded(Constants.CLOTH_CONFIG_ID)) return ClothConfigCompat.getConfigScreen(parent, config());
 		return null;
 	}
 }
