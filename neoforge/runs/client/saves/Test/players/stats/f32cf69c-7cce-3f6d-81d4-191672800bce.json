@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:glass": 9,
+      "minecraft:spruce_trapdoor": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 579,
+      "minecraft:time_since_rest": 3711,
+      "minecraft:walk_one_cm": 976,
+      "minecraft:total_world_time": 3719,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 31738,
+      "minecraft:sneak_time": 7,
+      "minecraft:play_time": 3711,
+      "minecraft:jump": 6,
+      "minecraft:time_since_death": 3711
+    }
+  },
+  "DataVersion": 4790
+}

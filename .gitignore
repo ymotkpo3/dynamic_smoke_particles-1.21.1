@@ -28,12 +28,12 @@ bin/
 
 *.DS_Store
 
-# fabric
+# fabric/neoforge
 
-run/*
-!run/saves/
-run/saves/*
-!run/saves/Test/
+runs/*
+!runs/saves/
+runs/saves/*
+!runs/saves/Test/
 *.lock
 
 # java

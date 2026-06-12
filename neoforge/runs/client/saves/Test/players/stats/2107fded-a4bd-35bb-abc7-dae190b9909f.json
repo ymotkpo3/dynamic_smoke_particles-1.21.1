@@ -1,0 +1,24 @@
+{
+  "stats": {
+    "minecraft:used": {
+      "minecraft:hay_block": 2,
+      "minecraft:grass_block": 1,
+      "minecraft:glass": 2,
+      "minecraft:campfire": 2
+    },
+    "minecraft:custom": {
+      "minecraft:sprint_one_cm": 1881,
+      "minecraft:time_since_rest": 1460,
+      "minecraft:walk_one_cm": 2040,
+      "minecraft:total_world_time": 1734,
+      "minecraft:leave_game": 1,
+      "minecraft:fly_one_cm": 22876,
+      "minecraft:crouch_one_cm": 63,
+      "minecraft:sneak_time": 37,
+      "minecraft:play_time": 1460,
+      "minecraft:jump": 8,
+      "minecraft:time_since_death": 1460
+    }
+  },
+  "DataVersion": 4790
+}
