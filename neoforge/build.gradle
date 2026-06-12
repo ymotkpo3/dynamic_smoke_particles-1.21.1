@@ -1,6 +1,7 @@
 plugins {
     id 'multiloader-loader'
     id 'net.neoforged.moddev'
+    id 'com.modrinth.minotaur'
 }
 repositories {
 	maven { url "https://maven.shedaniel.me/" }
@@ -58,5 +59,18 @@ sourceSets.configureEach {
                 attribute(loaderAttribute, 'neoforge')
             }
         }
+    }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = mod_id
+    versionNumber = version
+    versionType = "release"
+    uploadFile = jar
+    gameVersions = [minecraft_version]
+    loaders = ["neoforge"]
+    dependencies {
+		optional.project "cloth-config"
     }
 }

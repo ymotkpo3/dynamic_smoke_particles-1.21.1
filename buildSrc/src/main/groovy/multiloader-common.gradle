@@ -1,6 +1,5 @@
 plugins {
     id 'java-library'
-    // id "com.modrinth.minotaur" version "2.+"
 }
 
 base {
@@ -89,19 +88,3 @@ processResources {
 
     inputs.properties(expandProps)
 }
-
-/* modrinth {
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = "dynamic_smoke_particles"
-    versionNumber = project.mod_version
-    versionType = "release"
-    uploadFile = jar
-    gameVersions = [project.minecraft_version]
-    loaders = ["fabric"]
-    dependencies {
-        required.project "fabric-api"
-
-        optional.project "modmenu"
-		optional.project "cloth-config"
-    }
-} */

@@ -1,6 +1,7 @@
 plugins {
     id 'multiloader-loader'
     id 'net.fabricmc.fabric-loom'
+    id 'com.modrinth.minotaur'
 }
 repositories {
 	maven {
@@ -51,5 +52,21 @@ sourceSets.configureEach {
                 attribute(loaderAttribute, 'fabric')
             }
         }
+    }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = mod_id
+    versionNumber = version
+    versionType = "release"
+    uploadFile = jar
+    gameVersions = [minecraft_version]
+    loaders = ["fabric"]
+    dependencies {
+        required.project "fabric-api"
+
+        optional.project "modmenu"
+		optional.project "cloth-config"
     }
 }
