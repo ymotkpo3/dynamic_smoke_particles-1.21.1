@@ -58,10 +58,11 @@ processResources {
             'version'                      : version,
             'group'                        : project.group, //Else we target the task's group.
             'minecraft_version'            : minecraft_version,
+            'neoforge_minecraft_version_range'      : neoforge_minecraft_version_range,
             'minecraft_version_range'      : minecraft_version_range,
             'fabric_version'               : fabric_version,
             'fabric_loader_version'        : fabric_loader_version,
-            'minecraft_versions_depends'        : minecraft_versions_depends,
+            'minecraft_versions_depends'   : minecraft_versions_depends,
             'mod_name'                     : mod_name,
             'mod_author'                   : mod_author,
             'mod_id'                       : mod_id,
