@@ -26,7 +26,7 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Build Project (ProGuard, Remap, SHA)
+      - name: Build Project
         run: ./gradlew build
 
       - name: Publish to Modrinth
