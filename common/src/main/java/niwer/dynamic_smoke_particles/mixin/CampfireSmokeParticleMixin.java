@@ -26,7 +26,7 @@ public abstract class CampfireSmokeParticleMixin extends SingleQuadParticle impl
 	@Unique private boolean stoppedByCollision;
 
 	private CampfireSmokeParticleMixin(final ClientLevel level, final double x, final double y, final double z, final double xa, final double ya, final double za, final boolean isSignalFire, final TextureAtlasSprite sprite) {
-		super(level, x, y, z, sprite);
+		super(level, x, y, z);
 	}
 
 	@Inject(at = @At("HEAD"), method = "tick", cancellable = true)
