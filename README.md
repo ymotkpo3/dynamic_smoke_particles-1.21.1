@@ -1,5 +1,5 @@
 #Description:
-This repo is a backport of the mod dynamic smoke particles for minecraft 1.21.1. All credits for the [original mod developer](https://github.com/Niwer1525)
+This repo is a backport of the mod [dynamic smoke particles](https://github.com/Niwer1525/dynamic_smoke_particles) for minecraft 1.21.1. All credits for the [original mod developer](https://github.com/Niwer1525)
 
 ## Aditional Note:
 
