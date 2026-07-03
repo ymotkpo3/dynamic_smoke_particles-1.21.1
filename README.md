@@ -1,12 +1,6 @@
-A simple mod that brings your world to life by making smoke particles truly dynamic!
+#Description:
+This repo is a backport of the mod dynamic smoke particles for minecraft 1.21.1. All credits for the [original mod developer](https://github.com/Niwer1525)
 
-## Performance
-Expect smooth gameplay. Performance is highly optimized and should remain nearly identical to vanilla.
+## Aditional Note:
 
-## Open Source & Contributions
-The code is fully open source. It might not be the absolute most perfect implementation, but it works great! If you see room for improvement or want to contribute, you are more than welcome to jump in.
-
-## FAQ
-_Q: Will this be updated to newer versions?_
-
-A: Yes! I plan to actively maintain and update the mod for future releases.
+if you are the original Dev and you don't like me doing this, just let me know and I will delete the repo.
